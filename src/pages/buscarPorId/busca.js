@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./busca.css";
-import Logo from "../../Assets/images/LogoClinik .png";
+import Logo from "../../assets/images/LogoCliniK2.png";
 
 function Busca() {
   const [] = useState();
