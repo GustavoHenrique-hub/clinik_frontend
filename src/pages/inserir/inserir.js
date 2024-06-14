@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./inserir.css";
 import LogoCliniK2 from "../../assets/images/LogoCliniK2.png";
 import Queda from "../../assets/images/Queda.gif";
+import Gif from "../../assets/images/Gif.gif";
 
 function Insert() {
   const [stateName, setStateName] = useState("");
@@ -28,6 +29,7 @@ function Insert() {
       })
       .then((dadoAPI) => {
         console.log(dadoAPI);
+        alert(`Medico ${dadoAPI.nome} cadastrado!`);
       })
       .catch((erro) => {
         console.log(erro);
@@ -93,25 +95,15 @@ function Insert() {
                   placeholder="Digite seu CRM"
                   id="number"
                   class="form_style"
-                  type="number"
+                  type="text"
+                  minlength="2"
+                  maxlength="6"
                   onChange={(e) => setStateCRM(e.target.value)}
                 />
               </div>
-              <div class="form_group">
-                <label class="sub_title" for="password">
-                  Senha
-                </label>
-                <input
-                  placeholder="Digite uma senha"
-                  id="SENHA"
-                  class="form_style"
-                  type="password"
-                />
-              </div>
               <div class="buttons">
-                <button id="b1">CLARO!</button>
+                <button id="b1">Enviar</button>
                 <img id="queda" src={Queda} alt="gif" />
-                <button id="b2">EU NÃO!</button>
               </div>
               <p class="log">
                 Já possui uma conta?
@@ -122,7 +114,10 @@ function Insert() {
             </form>
           </div>
         </div>
-        <div></div>
+        <div>
+          <img src={Gif} alt="Gif" />
+        </div>
+        
       </div>
     </div>
   );
