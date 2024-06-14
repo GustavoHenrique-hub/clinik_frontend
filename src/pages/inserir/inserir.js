@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./inserir.css";
+import "../../App.css";
 import LogoCliniK2 from "../../assets/images/LogoCliniK2.png";
 import Queda from "../../assets/images/Queda.gif";
-import MoveSlide from "../../components/moveSlide/moveSlide";
+import Gif from "../../assets/images/Gif.gif";
 
 function Insert() {
   const [stateName, setStateName] = useState("");
@@ -47,7 +47,7 @@ function Insert() {
               <div class="whatsapp">
                 <a
                   id="whats"
-                  href="https://wa.me/+5511969784999/?text=Olá CliniK, podemos conversar?"
+                  href="https://api.whatsapp.com/send/?phone=%2B5511969784999&text=Ol%C3%A1+CliniK%2C+podemos+conversar%3F&type=phone_number&app_absent=0"
                 >
                   <i class="fa fa-whatsapp" aria-hidden="true">
                     (11-96978-4999)
@@ -98,17 +98,6 @@ function Insert() {
                   onChange={(e) => setStateCRM(e.target.value)}
                 />
               </div>
-              <div class="form_group">
-                <label class="sub_title" for="password">
-                  Senha
-                </label>
-                <input
-                  placeholder="Digite uma senha"
-                  id="SENHA"
-                  class="form_style"
-                  type="password"
-                />
-              </div>
               <div class="buttons">
                 <button id="b1">CLARO!</button>
                 <img id="queda" src={Queda} alt="gif" />
@@ -123,8 +112,8 @@ function Insert() {
             </form>
           </div>
         </div>
-        <div>
-          <MoveSlide />
+        <div className="carousel-container">
+          <img src={Gif} alt="gif" />
         </div>
       </div>
     </div>
