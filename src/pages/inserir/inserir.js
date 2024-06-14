@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./inserir.css";
 import LogoCliniK2 from "../../assets/images/LogoCliniK2.png";
 import Queda from "../../assets/images/Queda.gif";
-import MoveSlide from "../../components/moveSlide/moveSlide";
 
 function Insert() {
   const [stateName, setStateName] = useState("");
@@ -123,9 +122,7 @@ function Insert() {
             </form>
           </div>
         </div>
-        <div>
-          <MoveSlide />
-        </div>
+        <div></div>
       </div>
     </div>
   );
