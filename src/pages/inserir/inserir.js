@@ -2,35 +2,16 @@ import { useState } from "react";
 import "./inserir.css";
 import LogoCliniK2 from "../../assets/images/LogoCliniK2.png";
 import Queda from "../../assets/images/Queda.gif";
-import manicomio2 from "../../assets/images/manicomio2.jpg";
-import manicomio3 from "../../assets/images/manicomio3.JPG";
-import Gif from "../../assets/images/Gif.gif";
+import MoveSlide from "../../components/moveSlide/moveSlide";
 
 function Insert() {
-  const [stateNome, setStateNome] = useState("");
+  const [stateName, setStateName] = useState("");
   const [stateCRM, setStateCRM] = useState("");
   const [stateTelefone, setStateTelefone] = useState("");
 
-  let slideIndex = 0;
-
-  function moveSlide(n) {
-    const slides = document.querySelectorAll(".slide");
-    slideIndex += n;
-
-    if (slideIndex >= slides.length) {
-      slideIndex = 0;
-    }
-    if (slideIndex < 0) {
-      slideIndex = slides.length - 1;
-    }
-
-    const offset = -slideIndex * 100;
-    document.querySelector(
-      ".carousel"
-    ).style.transform = `translateX(${offset}%)`;
-  }
-
   const InsertPost = (e) => {
+    e.preventDefault();
+
     fetch(`http://localhost:8080/medico/inserir`, {
       method: "POST",
       headers: {
@@ -38,7 +19,7 @@ function Insert() {
         "Content-type": "application/json",
       },
       body: JSON.stringify({
-        nome: stateNome,
+        nome: stateName,
         crm: stateCRM,
         telefone: stateTelefone,
       }),
@@ -50,14 +31,14 @@ function Insert() {
         console.log(dadoAPI);
       })
       .catch((erro) => {
-        alert("ERRO:", erro);
+        console.log(erro);
       });
   };
 
   return (
     <div className="App">
       <header class="header">
-        <img id="logo" src={LogoCliniK2} alt="" />
+        <img id="logo" src={LogoCliniK2} alt="logo" />
 
         <h1>FALE CONOSCO:</h1>
         <div class="cards">
@@ -82,7 +63,7 @@ function Insert() {
         <div class="formulario">
           <div class="form_area">
             <p class="title">CADASTRO</p>
-            <form action="">
+            <form onSubmit={InsertPost} method="POST">
               <div class="form_group">
                 <label class="sub_title" for="name">
                   Nome
@@ -91,6 +72,7 @@ function Insert() {
                   placeholder="Digite seu nome"
                   class="form_style"
                   type="text"
+                  onChange={(e) => setStateName(e.target.value)}
                 />
               </div>
               <div class="form_group">
@@ -101,6 +83,7 @@ function Insert() {
                   placeholder="Digite seu telefone"
                   class="form_style"
                   type="text"
+                  onChange={(e) => setStateTelefone(e.target.value)}
                 />
               </div>
               <div class="form_group">
@@ -109,9 +92,10 @@ function Insert() {
                 </label>
                 <input
                   placeholder="Digite seu CRM"
-                  id="email"
+                  id="number"
                   class="form_style"
-                  type="email"
+                  type="number"
+                  onChange={(e) => setStateCRM(e.target.value)}
                 />
               </div>
               <div class="form_group">
@@ -128,12 +112,10 @@ function Insert() {
               <div class="buttons">
                 <button id="b1">CLARO!</button>
                 <img id="queda" src={Queda} alt="gif" />
-                <button id="b2">
-                  <a href="./crazy/crazy.html">EU NÃO!</a>
-                </button>
+                <button id="b2">EU NÃO!</button>
               </div>
               <p class="log">
-                Já possui uma conta?{" "}
+                Já possui uma conta?
                 <a class="link" href="">
                   Faça seu Login!
                 </a>
@@ -141,24 +123,8 @@ function Insert() {
             </form>
           </div>
         </div>
-        <div class="carousel-container">
-          <div class="carousel">
-            <div class="slide">
-              <img src={manicomio2} alt="Image 1" />
-            </div>
-            <div class="slide">
-              <img src={manicomio3} alt="Image 2" />
-            </div>
-            <div class="slide">
-              <img src={Gif} alt="Image 3" />
-            </div>
-          </div>
-          <a class="prev" onclick={moveSlide(-1)}>
-            &#10094;
-          </a>
-          <a class="next" onclick={moveSlide(1)}>
-            &#10095;
-          </a>
+        <div>
+          <MoveSlide />
         </div>
       </div>
     </div>
