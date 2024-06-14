@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import "../../App.css";
-=======
 import { useState } from "react";
 import "./busca.css";
 import Logo from "../../Assets/images/LogoClinik .png";
->>>>>>> 7fd127a2d45b5f2df98ab472e861e8ed3f8b796f
 
 function Busca() {
   const [] = useState();
