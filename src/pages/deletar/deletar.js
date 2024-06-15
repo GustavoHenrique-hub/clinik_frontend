@@ -57,7 +57,6 @@ function Delete() {
         </div>
       </header>
       <hr id="linha1" />
-
       <div class="container">
         <div class="formulario">
           <div class="form_area">
@@ -65,6 +64,9 @@ function Delete() {
             <form onSubmit={DeleteID} method="DELETE">
               <div class="form_group">
                 <label class="sub_title" for="ID"></label>
+            <form action="">
+              <div class="form_group">
+                <label class="sub_title" for="name"></label>
                 <input
                   placeholder="Digite o ID"
                   class="form_style"
@@ -77,6 +79,18 @@ function Delete() {
                   DELETAR <img id="queda" src={Queda} alt="gif" />
                 </button>
               </div>
+                />
+              </div>
+              <div class="form_group">
+                <button id="b1">
+                  DELETAR!
+                  <img id="queda" src="./images/Queda.gif" alt="gif" />
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
               <span>{stateResultadoApi}</span>
             </form>
