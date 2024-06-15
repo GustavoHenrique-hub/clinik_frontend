@@ -1,6 +1,6 @@
 import "./alterar.css";
-import Logo from "../assets/images/LogoCliniK2.png";
-import gif from "../assets/images/Queda.gif"
+import Logo from "../../assets/images/LogoCliniK2.png";
+import gif from "../../assets/images/Queda.gif";
 import { useState } from "react";
 
 function Alterar() {
@@ -19,7 +19,7 @@ function Alterar() {
     e.preventDefault();
     try {
       fetch(alterById, {
-        method: 'PUT',
+        method: "PUT",
         headers: {
           Accept: "application/json",
           "Content-type": "application/json",
@@ -27,7 +27,7 @@ function Alterar() {
         body: JSON.stringify({
           nome: satateNewName,
           crm: satateNewCRM,
-          telefone: satateNewTel
+          telefone: satateNewTel,
         }),
       })
         .then((response) => {
@@ -37,12 +37,12 @@ function Alterar() {
         })
         .then((dadoUsuario) => {
           console.log(dadoUsuario);
-          alert("Usuário alterado com sucesso!!")
+          alert("Usuário alterado com sucesso!!");
         });
     } catch (err) {
       console.log("ERRO: ", err);
     }
-  }
+  };
 
   const callSearchApi = (e) => {
     const buscaPorId = `http://localhost:8080/medico/busca/${stateId}`;
@@ -58,13 +58,13 @@ function Alterar() {
         .then((dadoUsuario) => {
           console.log(dadoUsuario);
           setStateName(dadoUsuario.nome);
-          setStateCRM(dadoUsuario.crm)
+          setStateCRM(dadoUsuario.crm);
           setStateTel(dadoUsuario.telefone);
         });
     } catch (err) {
       console.log("ERRO: ", err);
     }
-  }
+  };
   return (
     <div className="App">
       <header className="header">
@@ -72,7 +72,6 @@ function Alterar() {
 
         <h1>FALE CONOSCO:</h1>
         <div className="cards">
-
           <div className="card">
             <div className="card2">
               <div className="whatsapp">
@@ -105,13 +104,14 @@ function Alterar() {
                   type="text"
                   onChange={(e) => {
                     setStateId(e.target.value);
-                    setStateNewName("")
-                    setStateNewCRM("")
-                    setStateNewTel("")
+                    setStateNewName("");
+                    setStateNewCRM("");
+                    setStateNewTel("");
                   }}
-                  
                 />
-                <button id="b1" onClick={callSearchApi}>Buscar</button>
+                <button id="b1" onClick={callSearchApi}>
+                  Buscar
+                </button>
               </div>
               <div className="form_group">
                 <label className="sub_title" htmlFor="name">
@@ -151,10 +151,11 @@ function Alterar() {
                 />
               </div>
               <div className="buttons">
-                <button id="b1" onClick={callPutApi}>Enviar</button>
+                <button id="b1" onClick={callPutApi}>
+                  Enviar
+                </button>
                 <img id="queda" src={gif} alt="gif" />
               </div>
-              
             </form>
           </div>
         </div>

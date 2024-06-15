@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./inserir.css";
 import LogoCliniK2 from "../../assets/images/LogoCliniK2.png";
 import Queda from "../../assets/images/Queda.gif";
+import Gif from "../../assets/images/Gif.gif";
 
 function Insert() {
   const [stateName, setStateName] = useState("");
@@ -122,7 +123,6 @@ function Insert() {
             </form>
           </div>
         </div>
-        <div></div>
       </div>
     </div>
   );
