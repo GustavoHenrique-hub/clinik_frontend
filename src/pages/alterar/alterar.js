@@ -1,7 +1,7 @@
 import "./alterar.css";
 import Logo from "../../assets/images/LogoCliniK2.png";
-import gif from "../../assets/images/Queda.gif";
-import imageGif from "../../assets/images/Gif.gif";
+import gif from "../../assets/images/Queda.gif"
+import imageGif from "../../assets/images/Gif.gif"
 import { useState } from "react";
 
 function Alterar() {
@@ -160,8 +160,9 @@ function Alterar() {
             </form>
           </div>
         </div>
-        <div>
-          <img src={imageGif} alt="NossoGif" />
+
+        <div >
+          <img src={imageGif} alt="NossoGif"/>
         </div>
       </div>
     </div>
