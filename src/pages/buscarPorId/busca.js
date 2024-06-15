@@ -15,63 +15,37 @@ function Busca() {
 
   return (
     <div className="App">
-      <div id="body">
-        <header>
-          <img id="logo" src={Logo} />
-          <h2>
-            Fale conosco: 11 96978 - 4999
-            <a
-              href="https://wa.me/+5511969784999/?text=Olá CliniK, podemos conversar?"
-              target="_blank"
-            >
-              <img id="logo-whats" src={Whats} />
-            </a>
-          </h2>
-        </header>
+      <header class="header">
+        <img src={Logo} />
 
-        <hr id="linha1" />
-        <div class="container">
-          <div class="formulario">
-            <div class="form_area">
-              <p class="title">Busca por ID</p>
-              <input
-                className="search-name"
-                type="text"
-                placeholder="pesquisar"
-              ></input>
-              <button id="b1">buscar</button>
+        <div class="cards">
+          <div class="card">
+            <div class="card2">
+              <div class="whatsapp">
+                <a
+                  id="whats"
+                  href="https://wa.me/+5511969784999/?text=Olá CliniK, podemos conversar?"
+                >
+                  <i class="fa fa-whatsapp" aria-hidden="true">
+                    {" "}
+                    (11-96978-4999)
+                  </i>
+                </a>
+              </div>
             </div>
           </div>
-
-          <div class="carousel-container">
-            <Carousel onAnimationStart={1}>
-              <Carousel.Item interval={1500}>
-                <img className="slide" src={Manicomio2} alt="Image 1" />
-              </Carousel.Item>
-              <Carousel.Item interval={200}>
-                <img className="slide" src={Manicomio3} alt="Image 2" />
-              </Carousel.Item>
-
-              <Carousel.Item interval={1500}>
-                <img className="slide" src={Gif} alt="Image 3" />
-              </Carousel.Item>
-            </Carousel>
-          </div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-export default Busca;
-
-{
-  /* <div class="container">
+      </header>
+      <hr id="linha1" />
+      <div class="container">
         <h1>Pesquisa de profissional</h1>
         <input
           className="search-name"
           type="text"
           placeholder="pesquisar"
         ></input>
-      </div> */
+      </div>
+    </div>
+  );
 }
+export default Busca;
