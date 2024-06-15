@@ -83,7 +83,7 @@ h2 {
 .container {
   display: flex;
   transform-style: preserve-3d;
-  background-color: #7fffd4;;
+  background-color: #7fffd4;
   /* background-image: url("./images/capitone.jpg"); */
   background-size: cover;
   width: 100%;

@@ -31,11 +31,15 @@ function Home() {
         <button id="b1">
           <Link to="/busca">Busca</Link>
         </button>
-        <button id="b1">Inserir</button>
+        <button id="b1">
+          <Link to="/inserir">Inserir</Link>
+        </button>
         <button id="b1">
           <Link to="/alterar">Alterar</Link>
         </button>
-        <button id="b1">Deletar</button>
+        <button id="b1">
+          <Link to="/deletar">Deletar</Link>
+        </button>
       </div>
     </div>
   );
