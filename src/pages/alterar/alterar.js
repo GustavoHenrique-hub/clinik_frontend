@@ -1,4 +1,5 @@
 import "./alterar.css";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../../Assets/images/LogoClinik .png";
 import Manicomio2 from "../../Assets/images/manicomio2.jpg";
@@ -7,7 +8,6 @@ import Gif from "../../Assets/images/Gif.gif";
 import Whats from "../../Assets/images/whatsapp.png";
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
-import ScrollLock from "react-scrolllock";
 
 function Alterar() {
   const [stateId, setStateId] = useState("");
@@ -73,53 +73,64 @@ function Alterar() {
   }
 
   return (
-    <ScrollLock>
     <div className="App">
-      <div id="all">     
-        <header>
-          <img id="logo" src={Logo} />
-          <h2>
-            Fale conosco: 11 96978 - 4999
-            <a href="https://wa.me/+5511969784999/?text=Olá CliniK, podemos conversar?"target="_blank">
-              <img id="logo-whats" src={Whats} />
-            </a>
-          </h2>
-        </header>
+      
+    <div id="all">     
+        
+            <header>
+              <img id="logo" src={Logo} />
+                <h2>Fale conosco: 11 96978 - 4999
+                  <a  href="https://wa.me/+5511969784999/?text=Olá CliniK, podemos conversar?"
+                      target="_blank"><img id="logo-whats" src={Whats} />
+                  </a>
+                </h2>
+            </header>
         
         <hr id="linha1" />
 
-        <div className="container">
-          <div className="formulario">
-            <div className="form_area">
-            <label className="title" htmlFor="ID">Alterar dados</label>
-            <form method="PUT">
-              <div className="form_group">
-                <label className="sub_title" htmlFor="ID">Id</label>
-                <input placeholder="Digite o Id" className="form_style" type="text" onChange={(e) => {
+        <div className="xaxa">
+        
+        <div className="formulario">
+        
+        <div id="form_area-alterar">
+
+        <label className="title" htmlFor="ID">Alterar dados</label>
+            
+          <form method="PUT">
+              
+          <div id="form_group-alterar">
+
+                
+                                
+                <input placeholder="Digite o Id" 
+                    className="form_style" type="text" 
+                    onChange={(e) => {
                     setStateId(e.target.value);
                     setStateNewName("")
                     setStateNewCRM("")
                     setStateNewTel("")
-                  }}/>
-                  <button id="b1" onClick={callSearchApi}>Buscar</button>
-                  </div>
+                  }}
+                />
+                  
+          <button id="b1" onClick={callSearchApi}>Buscar</button>
+            
+          </div>
+                             
+          <div id="form_group-alterar2">
                 
-              
-              <div className="form_group">
-                <label className="sub_title" htmlFor="name">
-                  Nome
-                </label>
+                <label className="sub_title" htmlFor="name">Nome: </label>
+                
                 <input
                   placeholder={stateName}
                   className="form_style"
                   type="text"
                   onChange={(e) => setStateNewName(e.target.value)}
                 />
-              </div>
-              <div className="form_group">
-                <label className="sub_title" htmlFor="CRM">
-                  CRM
-                </label>
+
+          <br/>
+
+                <label className="sub_title" htmlFor="CRM">CRM: </label>
+                
                 <input
                   placeholder={stateCRM}
                   id="email"
@@ -128,11 +139,13 @@ function Alterar() {
                   maxLength="6"
                   onChange={(e) => setStateNewCRM(e.target.value)}
                 />
-              </div>
-              <div className="form_group">
-                <label className="sub_title" htmlFor="Telefone">
-                  Telefone
-                </label>
+
+          <br/>
+
+          
+                
+                <label className="sub_title" htmlFor="Telefone">Telefone: </label>
+                
                 <input
                   placeholder={stateTel}
                   id="email"
@@ -140,32 +153,32 @@ function Alterar() {
                   type="text"
                   onChange={(e) => setStateNewTel(e.target.value)}
                 />
-                <button id="b1" onClick={callPutApi}>Enviar</button>
-              </div>
+                
+          
+              
+          </div>
               
               
-              
-            </form>
+          </form>
+
+          <button id="b1" onClick={callPutApi}>Enviar</button>
               
         
-        </div>
-        </div> 
-
-
-
+          </div>
+          </div>
 
             
-             <div class="carousel-container">
-          <Carousel onAnimationStart={2}>
-              <Carousel.Item interval={3000}>
-                <img className="slide" src={Manicomio2} alt="Image 1" />
+             <div className="carousel-container">
+          <Carousel onAnimationStart={100}>
+              <Carousel.Item onAnimationStart={100} interval={3000}>
+                <img className="slide1" src={Manicomio2} alt="Image 1" />
               </Carousel.Item>
-              <Carousel.Item interval={200}>
-                <img className="slide" src={Manicomio3} alt="Image 2" />
+              <Carousel.Item onAnimationStart={100} interval={100}>
+                <img className="slide2" src={Manicomio3} alt="Image 2" />
               </Carousel.Item>
 
-              <Carousel.Item interval={5000}>
-                <img className="slide" src={Gif} alt="Image 3" />
+              <Carousel.Item onAnimationStart={100} interval={5000}>
+                <img className="slide3" src={Gif} alt="Image 3" />
               </Carousel.Item>
             </Carousel>
           </div>
@@ -173,23 +186,9 @@ function Alterar() {
           </div>
           </div>
           
-          </ScrollLock>
+          
+          
   );
 }
 
 export default Alterar;
-
-
-
- {/* <button id="b1">
-          <Link to="/busca">Busca</Link>
-        </button>
-        <button id="b1">
-          <Link to="/inserir">Inserir</Link>
-        </button>
-        <button id="b1">
-          <Link to="/alterar">Alterar</Link>
-        </button>
-        <button id="b1">
-          <Link to="/deletar">Deletar</Link>
-        </button> */}

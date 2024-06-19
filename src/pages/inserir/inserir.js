@@ -9,7 +9,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
 import { useState } from "react";
 
-import ScrollLock from "react-scrolllock";
 
 function Inserir() {
   const [stateName, setStateName] = useState("");
@@ -43,79 +42,79 @@ function Inserir() {
       });
   };
   return (
-    <ScrollLock>
-    <div className="App">
+      <div className="App">
+      
       <div id="all">
      
-        <header>
-          <img id="logo" src={Logo} />
-          <h2>
-            Fale conosco: 11 96978 - 4999
-            <a
-              href="https://wa.me/+5511969784999/?text=Olá CliniK, podemos conversar?"
-              target="_blank"
-            >
+          <header>
+              <img id="logo" src={Logo} />
+              <h2>Fale conosco: 11 96978 - 4999
+                <a
+                  href="https://wa.me/+5511969784999/?text=Olá CliniK, podemos conversar?"
+                  target="_blank">
               <img id="logo-whats" src={Whats} />
-            </a>
-          </h2>
-        </header>
+                </a>
+              </h2>
+          </header>
         
         <hr id="linha1" />
 
-        <div className="container">
-          <div className="formulario">
-            <div className="form_area">
-            <p class="title">CADASTRO</p>
+        <div className="xaxa">
+        
+        <div className="formulario">
+        
+        <div id="form_area-inserir">
+            
+        <label className="title" htmlFor="ID">Cadastro de Profissional</label>
+            
             <form onSubmit={InsertPost} method="POST">
-              <div class="form_group">
-                <label class="sub_title" for="name">
-                  Nome
-                </label>
+              
+                <div id="form_group-inserir">
+                
+                <label className="sub_title" for="name">Nome: </label>
+
                 <input
-                  placeholder="Digite seu nome"
-                  class="form_style"
+                  placeholder="Digite o nome"
                   type="text"
                   onChange={(e) => setStateName(e.target.value)}
                 />
-              </div>
-              <div class="form_group">
-                <label class="sub_title" for="name">
-                  Telefone
-                </label>
+
+              <br/>
+                
+                <label className="sub_title" for="name">Telefone: </label>
+                
                 <input
-                  placeholder="Digite seu telefone"
-                  class="form_style"
+                  placeholder="Digite o telefone"
                   type="text"
                   onChange={(e) => setStateTelefone(e.target.value)}
                 />
-              </div>
-              <div class="form_group">
-                <label class="sub_title" for="CRM">
-                  CRM
-                </label>
+              
+              <br/>
+
+                <label className="sub_title" for="CRM">CRM: </label>
+
                 <input
-                  placeholder="Digite seu CRM"
+                  placeholder="Digite o CRM"
                   id="number"
-                  class="form_style"
                   type="text"
                   minlength="2"
                   maxlength="6"
                   onChange={(e) => setStateCRM(e.target.value)}
                 />
-              </div>
-              <div class="buttons">
-                <button id="b1">Enviar</button>
+
+              
+                  
+                </div>
+
                 
-              </div>
-              <p class="log">
-                Já possui uma conta?
-                <a class="link">
-                  Faça seu Login!
-                </a>
-              </p>
+
+                
+                
+              
+             
             </form>
               
-        
+            <button id="b1">Enviar</button>
         </div>
         </div> 
 
@@ -123,17 +122,17 @@ function Inserir() {
 
 
             
-             <div class="carousel-container">
-          <Carousel onAnimationStart={2}>
-              <Carousel.Item interval={3000}>
-                <img className="slide" src={Manicomio2} alt="Image 1" />
+        <div className="carousel-container">
+          <Carousel onAnimationStart={100}>
+              <Carousel.Item onAnimationStart={100} interval={3000}>
+                <img className="slide1" src={Manicomio2} alt="Image 1" />
               </Carousel.Item>
-              <Carousel.Item interval={200}>
-                <img className="slide" src={Manicomio3} alt="Image 2" />
+              <Carousel.Item onAnimationStart={100} interval={100}>
+                <img className="slide2" src={Manicomio3} alt="Image 2" />
               </Carousel.Item>
 
-              <Carousel.Item interval={5000}>
-                <img className="slide" src={Gif} alt="Image 3" />
+              <Carousel.Item onAnimationStart={100} interval={5000}>
+                <img className="slide3" src={Gif} alt="Image 3" />
               </Carousel.Item>
             </Carousel>
           </div>
@@ -141,23 +140,7 @@ function Inserir() {
           </div>
           </div>
           
-          </ScrollLock>
   );
 }
 
 export default Inserir;
-
-
-
- {/* <button id="b1">
-          <Link to="/busca">Busca</Link>
-        </button>
-        <button id="b1">
-          <Link to="/inserir">Inserir</Link>
-        </button>
-        <button id="b1">
-          <Link to="/alterar">Alterar</Link>
-        </button>
-        <button id="b1">
-          <Link to="/deletar">Deletar</Link>
-        </button> */}

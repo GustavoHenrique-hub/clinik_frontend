@@ -2,13 +2,11 @@
   padding: 0%;
   margin: 0%;
 }
-button a{
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
 
 #all{   
   background-color: #140014;
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
@@ -17,23 +15,26 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 10%;
+  width: 100vw;
+  height: 15vh;
   color: white;
 }
 
-
-
 #logo {
-  margin-left: 125px;
+  margin-left: 200px;
   width: 150px;
   height: 130px;
+}
+
+h2{
+  font-size: 1.5em;
 }
 
 #logo-whats{
   align-items: center;
   width: 40px;
   height: 40px;
+  margin-right: 200px;
   margin-left: 20px;
   margin-bottom: 5px;
 }
@@ -46,126 +47,110 @@ header {
   height: 5px;
   background-color: white;
 }
-.container {
+
+.xaxa {
   display: flex;
   flex-direction: row;
   justify-content: space-around;   
   width: 100vw;
-  height: 100vh;
-}
-form{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 
 .formulario{
+  display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.form_area {
+#form_area-alterar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
   background-color: #7fffd4;
+  padding-top: 30px;
   height: 550px;
   width: 350px;
   border: 2px solid #264143;
   border-radius: 15px;
   box-shadow: 5px 6px 0px 3px #ff00d0;
-  
-
+  gap: 20px;
 }
-.form_group{
+
+#form_group-alterar{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 1.5px;
+  align-items: center;
+  gap: 20px;
 }
+
+#form_group-alterar2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30px;
+}
+
 input{
   border-radius: 10px;
   width: 200px;
   height: 35px;
   padding: 5px;
   border: 2px solid #264143;
+  border-radius: 15px;
+  box-shadow: 5px 6px 0px 3px #ff00d0;
 }
 
 .title{
   font-size: 20px;
   font-weight: bold;
-
 }
 
 #b1 {
-  --glow-color: rgb(255, 255, 255);
-  --glow-spread-color: #ff00d0;
-  --enhanced-glow-color: rgb(254, 254, 255);
-  --btn-color: #e2a1d6;
-  border: 1px solid var(--glow-color);
-  padding: 10px;
-  color: rgb(255, 255, 255);
-  font-size: 15px;
-  font-weight: bold;
-  background-color: var(--btn-color);
+  cursor: pointer;
+  border: 0;
+  color: #140014;
+  padding: 18px 32px;
   border-radius: 15px;
-  outline: none;
-  box-shadow: 0 0 1em 0.25em var(--glow-color),
-    0 0 1em 1em var(--glow-spread-color),
-    inset 0 0 0.75em 0.25em var(--glow-color);
-  text-shadow: 0 0 0.5em var(--glow-color);
-  position: relative;
-  transition: all 0.3s;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  width: 100px;
-  height: 50px;
-}
-
-#b1:after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  top: 120%;
-  background-color: var(--glow-spread-color);
-  filter: blur(2em);
-  opacity: 0.7;
-  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
-}
-.resposta{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-#b1:hover {
-  color: var(--btn-color);
-  background-color: var(--glow-color);
-  box-shadow: 0 0 1em 0.25em var(--glow-color),
-    0 0 4em 2em var(--glow-spread-color),
-    inset 0 0 0.75em 0.25em var(--glow-color);
+  border: 2px solid #264143;
+  box-shadow: 5px 6px 0px 3px #ff00d0;
+  transition: .3s;
 }
 
 #b1:active {
-  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
-    0 0 2.5em 2em var(--glow-spread-color),
-    inset 0 0 0.5em 0.25em var(--glow-color);
+  transform: translateY(5px);
+  border: 2px solid #264143;
+  box-shadow: 2px 4px 0px 1px #ff00d0;
 }
-.carousel-container {
+
+#b1 a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+div .form_group #b1{
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-bottom: 150px;
-  margin-left: 10vw;
+  width: 100px;
+  height: 20px;
+  color: #140014;
+}
+
+
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 80px;
+  width: 800px;
+  height: 500px;
 }
 
 /* Estilo para as imagens */
@@ -173,4 +158,5 @@ input{
   width: 700px;
   height: 450px;
 }
+
 
